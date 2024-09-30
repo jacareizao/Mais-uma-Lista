@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+      int[] matriculas = new int[100];
+        double[] notas = new double[100];
+
+        
+        for (int i = 0; i < 100; i++) {
+            System.out.print("Digite a matrícula do aluno " + (i + 1) + ": ");
+            matriculas[i] = scanner.nextInt();
+            System.out.print("Digite a nota do aluno " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+        }
+
+        double maior1 = Double.NEGATIVE_INFINITY;
+        double maior2 = Double.NEGATIVE_INFINITY;
+        int matriculaMaior1 = -1;
+        int matriculaMaior2 = -1;
+
+        for (int i = 0; i < 100; i++) {
+            if (notas[i] > maior1) {
+                maior2 = maior1;
+                matriculaMaior2 = matriculaMaior1;
+                maior1 = notas[i];
+                matriculaMaior1 = matriculas[i];
+            } else if (notas[i] > maior2) {
+                maior2 = notas[i];
+                matriculaMaior2 = matriculas[i];
+            }
+        }
+
+      
+        System.out.println("Primeira maior nota: " + maior1 + ", Matrícula: " + matriculaMaior1);
+        System.out.println("Segunda maior nota: " + maior2 + ", Matrícula: " + matriculaMaior2);
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        
+        System.out.print("Digite o valor de n: ");
+        int n = sc.nextInt();
+        
+        
+        int num = 1; 
+        int count = 0; 
+        
+        
+        while (count < n * 3) { 
+            for (int i = 0; i < 2; i++) { 
+                System.out.print(num + " ");
+                count++;
+                if (count >= n * 3) break; 
+            }
+            num++; 
+        }
+        
+        sc.close();
+    }
+}
